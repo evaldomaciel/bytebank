@@ -4,6 +4,7 @@
     "editor.wordWrapColumn": 2000,
     "diffEditor.wordWrap": "off",
     "cSpell.words": [
+        "ARGB",
         "Botao",
         "Bytebankapp",
         "Conta",
@@ -12,15 +13,15 @@
         "cupertino",
         "formulario",
         "Formulario",
+        "Futurebuilder",
         "icone",
         "indice",
+        "Listview",
         "numero",
         "Tranferencias",
         "transferencia",
         "Transferencia",
-        "transferencias",
-        "Futurebuilder",
-        "Listview"
+        "transferencias"
     ],
     "cSpell.language": "en,pt,pt-BR",
     "editor.wrappingIndent": "none",

@@ -7,18 +7,18 @@ Curso de Flutter da Alura.
 - [X] Introdução
 - [X] Criando o projeto
 - [X] Adicionando imagem e botão de contatos
-- [ ] Ajustando o visual do dashboard
-- [ ] Implementando a lista de contatos
-- [ ] Implementando a tela do formulário
-- [ ] Finalizando o fluxo do app
-- [ ] Conhecendo as opções de persistência de dados
-- [ ] Configurando o SQLite
-- [ ] Inserindo e buscando informações
-- [ ] Configurando o builder do Listview
-- [ ] Carregando a lista de contatos
-- [ ] Evitando problemas da execução inicial do Futurebuilder
-- [ ] Lidando com os estados do snapshot
-- [ ] Finalizando o fluxo do app com o banco de dados
-- [ ] Utilizando o async await
-- [ ] Criando o DAO (data access object) para o contato
-- [ ] Conclusão
+- [X] Ajustando o visual do dashboard
+- [ ] Implementando a lista de contatos
+- [ ] Implementando a tela do formulário
+- [ ] Finalizando o fluxo do app
+- [ ] Conhecendo as opções de persistência de dados
+- [ ] Configurando o SQLite
+- [ ] Inserindo e buscando informações
+- [ ] Configurando o builder do Listview
+- [ ] Carregando a lista de contatos
+- [ ] Evitando problemas da execução inicial do Futurebuilder
+- [ ] Lidando com os estados do snapshot
+- [ ] Finalizando o fluxo do app com o banco de dados
+- [ ] Utilizando o async await
+- [ ] Criando o DAO (data access object) para o contato
+- [ ] Conclusão
