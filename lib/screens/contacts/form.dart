@@ -1,11 +1,16 @@
-import 'dart:ffi';
-import 'dart:ui';
-
+import 'package:bytebank/models/contact.dart';
 import 'package:flutter/material.dart';
 
-class ContactForm extends StatelessWidget {
+class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
 
+  @override
+  State<ContactForm> createState() => _ContactFormState();
+}
+
+class _ContactFormState extends State<ContactForm> {
+  final TextEditingController _nomeCompletoController = TextEditingController();
+  final TextEditingController _numeroDaContaController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,34 +18,41 @@ class ContactForm extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: const <Widget>[
+          children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: 8.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: TextField(
-                decoration: InputDecoration(
+                controller: _nomeCompletoController,
+                decoration: const InputDecoration(
                   label: Text('Nome completo'),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24.0,
                 ),
               ),
             ),
             TextField(
-              decoration: InputDecoration(
+              controller: _numeroDaContaController,
+              decoration: const InputDecoration(
                 label: Text('Número da conta'),
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24.0,
               ),
               keyboardType: TextInputType.number,
             ),
             Padding(
-              padding: EdgeInsets.only(top: 16.0),
+              padding: const EdgeInsets.only(top: 16.0),
               child: SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
-                  onPressed: null,
-                  child: Text("Criar"),
+                  onPressed: () {
+                    final String nomeCompleto = _nomeCompletoController.text;
+                    final int? numeroDaconta = int.tryParse(_numeroDaContaController.text);
+                    final Contact novoContato = Contact(nomeCompleto, numeroDaconta);
+                    Navigator.pop(context, novoContato);
+                  },
+                  child: const Text("Criar"),
                 ),
               ),
             ),

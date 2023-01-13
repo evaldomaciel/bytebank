@@ -10,7 +10,7 @@ Curso de Flutter da Alura.
 - [X] Ajustando o visual do dashboard
 - [X] Implementando a lista de contatos
 - [X] Implementando a tela do formulário
-- [ ] Finalizando o fluxo do app
+- [X] Finalizando o fluxo do app
 - [ ] Conhecendo as opções de persistência de dados
 - [ ] Configurando o SQLite
 - [ ] Inserindo e buscando informações
