@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,14 +20,14 @@ class ByteBankApp extends StatelessWidget {
           brightness: Brightness.light,
           primary: Color.fromARGB(255, 27, 94, 32),
           onPrimary: Colors.white,
-          secondary: Colors.green,
-          onSecondary: Colors.red,
+          secondary: Color.fromARGB(255, 27, 94, 32),
+          onSecondary: Colors.white,
           error: Colors.red,
           onError: Colors.red,
-          background: Colors.red,
-          onBackground: Colors.red,
-          surface: Colors.red,
-          onSurface: Colors.red,
+          background: Color.fromARGB(255, 27, 94, 32),
+          onBackground: Color.fromARGB(255, 27, 94, 32),
+          surface: Color.fromARGB(255, 27, 94, 32),
+          onSurface: Color.fromARGB(255, 27, 94, 32),
         ),
       ),
       home: Dashboard(),
@@ -34,50 +35,4 @@ class ByteBankApp extends StatelessWidget {
   }
 }
 
-class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Dashboard")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset('assets/images/bytebank_logo.png'),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              padding: const EdgeInsets.all(8.0),
-              height: 100,
-              width: 160,
-              color: Theme.of(context).primaryColor,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Icon(
-                    Icons.people,
-                    color: Colors.white,
-                    size: 32,
-                  ),
-                  Text(
-                    'Contatos',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16.0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+ 
