@@ -2,13 +2,13 @@
 
 class Contact {
   final int? id;
-  final String nome;
-  final int? numeroDaConta;
+  final String name;
+  final int? accountNumber;
 
-  Contact(this.id, this.nome, this.numeroDaConta);
+  Contact(this.id, this.name, this.accountNumber);
 
   @override
   String toString() {
-    return 'Se lascar ${nome} ${numeroDaConta} ${id}';
+    return 'Se lascar ${name} ${accountNumber} ${id}';
   }
 }

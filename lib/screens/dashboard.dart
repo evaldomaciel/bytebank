@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:bytebank/screens/contacts/list.dart';
+import 'package:bytebank/screens/transactions_list.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -26,7 +27,7 @@ class Dashboard extends StatelessWidget {
                   _showContactsList(context);
                   print("Foda-se");
                 }),
-                _FeatureItem('Transferenciais realizadas', Icons.description, onClick: () => print("Não rolou nada")),
+                _FeatureItem('Transferenciais realizadas', Icons.description, onClick: () => _showTransactionsList(context)),
               ],
             ),
           ),
@@ -39,6 +40,14 @@ class Dashboard extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => ContactsList(),
+      ),
+    );
+  }
+
+  _showTransactionsList(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => TransactionsList(),
       ),
     );
   }

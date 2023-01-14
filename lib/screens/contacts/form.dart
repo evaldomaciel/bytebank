@@ -10,8 +10,8 @@ class ContactForm extends StatefulWidget {
 }
 
 class _ContactFormState extends State<ContactForm> {
-  final TextEditingController _nomeCompletoController = TextEditingController();
-  final TextEditingController _numeroDaContaController = TextEditingController();
+  final TextEditingController _name = TextEditingController();
+  final TextEditingController _accountNumberController = TextEditingController();
   final ContactDao _dao = ContactDao();
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _ContactFormState extends State<ContactForm> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: TextField(
-                controller: _nomeCompletoController,
+                controller: _name,
                 decoration: const InputDecoration(
                   label: Text('Nome completo'),
                 ),
@@ -34,7 +34,7 @@ class _ContactFormState extends State<ContactForm> {
               ),
             ),
             TextField(
-              controller: _numeroDaContaController,
+              controller: _accountNumberController,
               decoration: const InputDecoration(
                 label: Text('Número da conta'),
               ),
@@ -49,9 +49,9 @@ class _ContactFormState extends State<ContactForm> {
                 width: double.maxFinite,
                 child: ElevatedButton(
                   onPressed: () {
-                    final String nomeCompleto = _nomeCompletoController.text;
-                    final int? numeroDaConta = int.tryParse(_numeroDaContaController.text);
-                    final Contact novoContato = Contact(0, nomeCompleto, numeroDaConta);
+                    final String fullName = _name.text;
+                    final int? accountNumber = int.tryParse(_accountNumberController.text);
+                    final Contact novoContato = Contact(0, fullName, accountNumber);
                     _dao.save(novoContato).then((id) {
                       setState(() => Navigator.pop(context));
                     });
