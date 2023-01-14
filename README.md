@@ -19,6 +19,6 @@ Curso de Flutter da Alura.
 - [X] Evitando problemas da execução inicial do Futurebuilder
 - [X] Lidando com os estados do snapshot
 - [X] Finalizando o fluxo do app com o banco de dados
-- [ ] Utilizando o async await
+- [X] Utilizando o async await
 - [ ] Criando o DAO (data access object) para o contato
 - [ ] Conclusão
