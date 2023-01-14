@@ -20,5 +20,5 @@ Curso de Flutter da Alura.
 - [X] Lidando com os estados do snapshot
 - [X] Finalizando o fluxo do app com o banco de dados
 - [X] Utilizando o async await
-- [ ] Criando o DAO (data access object) para o contato
-- [ ] Conclusão
+- [X] Criando o DAO (data access object) para o contato
+- [X] Conclusão

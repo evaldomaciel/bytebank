@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors,  prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors,  prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, no_leading_underscores_for_local_identifiers, use_key_in_widget_constructors
 
-import 'package:bytebank/database/app/database.dart';
+import 'package:bytebank/database/app/dao/contact_doa.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contacts/form.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +8,15 @@ import 'package:flutter/material.dart';
 class ContactsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ContactDao _dao = ContactDao();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Contatos"),
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: [],
-        future: Future.delayed(Duration(seconds: 1)).then(((value) => findAll())), // FutureBuilder tenta executar a busca de contatos no banco de dados e modifica o código no callback
+        future: Future.delayed(Duration(seconds: 1)).then(((value) => _dao.findAll())), // FutureBuilder tenta executar a busca de contatos no banco de dados e modifica o código no callback
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -27,7 +29,6 @@ class ContactsList extends StatelessWidget {
                   children: [CircularProgressIndicator(), Text("Carregando")],
                 ),
               );
-              break;
             case ConnectionState.active:
               break;
             case ConnectionState.done:
@@ -39,7 +40,6 @@ class ContactsList extends StatelessWidget {
                 },
                 itemCount: contacts?.length,
               );
-              break;
           }
           return Text("Erro no retorno!");
         },
