@@ -14,21 +14,39 @@ class ContactsList extends StatelessWidget {
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: [],
-        future: Future.delayed(Duration(seconds: 0)).then(((value) => findAll())), // FutureBuilder tenta executar a busca de contatos no banco de dados e modifica o código no callback
+        future: Future.delayed(Duration(seconds: 1)).then(((value) => findAll())), // FutureBuilder tenta executar a busca de contatos no banco de dados e modifica o código no callback
         builder: (context, snapshot) {
-          final List<Contact>? contacts = snapshot.data;
-          return ListView.builder(
-            itemBuilder: (context, index) {
-              final Contact contact = contacts![index];
-              return _ContactItem(contact);
-            },
-            itemCount: contacts?.length,
-          );
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+              break;
+            case ConnectionState.waiting:
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [CircularProgressIndicator(), Text("Carregando")],
+                ),
+              );
+              break;
+            case ConnectionState.active:
+              break;
+            case ConnectionState.done:
+              final List<Contact>? contacts = snapshot.data;
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  final Contact contact = contacts![index];
+                  return _ContactItem(contact);
+                },
+                itemCount: contacts?.length,
+              );
+              break;
+          }
+          return Text("Erro no retorno!");
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ContactForm())).then((novoContato) => debugPrint(novoContato.toString()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ContactForm()));
         },
         child: Icon(Icons.add),
       ),

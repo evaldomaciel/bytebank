@@ -5,15 +5,10 @@ class Contact {
   final String nome;
   final int? numeroDaConta;
 
-  Contact(
-    this.id,
-    this.nome,
-    this.numeroDaConta
-  );
+  Contact(this.id, this.nome, this.numeroDaConta);
 
   @override
-  String toString(){
+  String toString() {
     return 'Se lascar ${nome} ${numeroDaConta} ${id}';
   }
-
-} 
+}

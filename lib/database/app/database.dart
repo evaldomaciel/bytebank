@@ -18,7 +18,8 @@ Future<Database> createDatabase() {
           ')',
         );
       },
-      version: 3,
+      version: 1,
+      // onDowngrade: onDatabaseDowngradeDelete, /// possibilidade para limpar o banco de dados
     );
   });
 }
