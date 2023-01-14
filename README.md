@@ -1,24 +1,22 @@
 # ByteBank
 
 Curso de Flutter da Alura. 
-
-## Checklist de aulas: 
+## Flutter com Web API
+### Checklist de aulas: 
 
 - [X] Introdução
-- [X] Criando o projeto
-- [X] Adicionando imagem e botão de contatos
-- [X] Ajustando o visual do dashboard
-- [X] Implementando a lista de contatos
-- [X] Implementando a tela do formulário
-- [X] Finalizando o fluxo do app
-- [X] Conhecendo as opções de persistência de dados
-- [X] Configurando o SQLite
-- [x] Inserindo e buscando informações
-- [X] Configurando o builder do Listview
-- [X] Carregando a lista de contatos
-- [X] Evitando problemas da execução inicial do Futurebuilder
-- [X] Lidando com os estados do snapshot
-- [X] Finalizando o fluxo do app com o banco de dados
-- [X] Utilizando o async await
-- [X] Criando o DAO (data access object) para o contato
-- [X] Conclusão
+- [ ] Novas funcionalidades no dashboard
+- [ ] Delegando eventos com callbacks
+- [ ] Adicionando a lista de transferências
+- [ ] Configurando o ambiente da web API
+- [ ] Buscando transferências da web API
+- [ ] Utilizando o interceptador do HTTP 
+- [ ] Convertendo JSON para objeto do Dart 
+- [ ] Carregando a lista de transferências na tela 
+- [ ] Lidando com problemas da comunicação externa 
+- [ ] Salvando transferências 
+- [ ] Integrando a inserção de transferências
+- [ ] Recapturando o código 
+- [ ] Serializando JSON no objeto
+- [ ] Simplificando o código de conversão 
+- [ ] Conclusão
