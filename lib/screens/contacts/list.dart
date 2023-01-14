@@ -12,7 +12,7 @@ class ContactsList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contatos"),
+        title: Text("Transferir"),
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: [],

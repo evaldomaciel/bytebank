@@ -5,7 +5,7 @@ Curso de Flutter da Alura.
 ### Checklist de aulas: 
 
 - [X] Introdução
-- [ ] Novas funcionalidades no dashboard
+- [X] Novas funcionalidades no dashboard
 - [ ] Delegando eventos com callbacks
 - [ ] Adicionando a lista de transferências
 - [ ] Configurando o ambiente da web API
