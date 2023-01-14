@@ -11,12 +11,12 @@ Curso de Flutter da Alura.
 - [X] Implementando a lista de contatos
 - [X] Implementando a tela do formulário
 - [X] Finalizando o fluxo do app
-- [ ] Conhecendo as opções de persistência de dados
-- [ ] Configurando o SQLite
-- [ ] Inserindo e buscando informações
-- [ ] Configurando o builder do Listview
-- [ ] Carregando a lista de contatos
-- [ ] Evitando problemas da execução inicial do Futurebuilder
+- [X] Conhecendo as opções de persistência de dados
+- [X] Configurando o SQLite
+- [x] Inserindo e buscando informações
+- [X] Configurando o builder do Listview
+- [X] Carregando a lista de contatos
+- [X] Evitando problemas da execução inicial do Futurebuilder
 - [ ] Lidando com os estados do snapshot
 - [ ] Finalizando o fluxo do app com o banco de dados
 - [ ] Utilizando o async await

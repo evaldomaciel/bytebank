@@ -48,8 +48,8 @@ class _ContactFormState extends State<ContactForm> {
                 child: ElevatedButton(
                   onPressed: () {
                     final String nomeCompleto = _nomeCompletoController.text;
-                    final int? numeroDaconta = int.tryParse(_numeroDaContaController.text);
-                    final Contact novoContato = Contact(nomeCompleto, numeroDaconta);
+                    final int? numeroDaConta = int.tryParse(_numeroDaContaController.text);
+                    final Contact novoContato = Contact(0, nomeCompleto, numeroDaConta);
                     Navigator.pop(context, novoContato);
                   },
                   child: const Text("Criar"),
