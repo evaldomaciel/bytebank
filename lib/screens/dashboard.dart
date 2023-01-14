@@ -18,13 +18,27 @@ class Dashboard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Image.asset('assets/images/bytebank_logo.png'),
           ),
-          Row(
-            children: <Widget>[
-              _FeatureItem('Transferir', Icons.monetization_on),
-              _FeatureItem('Transferenciais realizadas', Icons.description),
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: <Widget>[
+                _FeatureItem('Transferir', Icons.monetization_on, onClick: () {
+                  _showContactsList(context);
+                  print("Foda-se");
+                }),
+                _FeatureItem('Transferenciais realizadas', Icons.description, onClick: () => print("Não rolou nada")),
+              ],
+            ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _showContactsList(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ContactsList(),
       ),
     );
   }
@@ -33,7 +47,8 @@ class Dashboard extends StatelessWidget {
 class _FeatureItem extends StatelessWidget {
   final String textFeature;
   final IconData iconFeature;
-  const _FeatureItem(this.textFeature, this.iconFeature);
+  final Function onClick;
+  const _FeatureItem(this.textFeature, this.iconFeature, {required this.onClick});
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +58,7 @@ class _FeatureItem extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         child: InkWell(
           onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => ContactsList(),
-              ),
-            );
+            onClick();
           },
           child: Container(
             padding: const EdgeInsets.all(8.0),
