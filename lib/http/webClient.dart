@@ -24,9 +24,16 @@ class LoggingInterceptor implements InterceptorContract {
   }
 }
 
+final Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
+const authority = '192.168.1.35:8080';
+const unencodedPath = '/transactions';
+const headerAPI = {
+  'password': '1000',
+  'Content-type': 'application/josn',
+};
+
 Future<List<Transaction>> findAll() async {
-  final Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
-  final url = Uri.http('192.168.1.35:8080', '/transactions', {'q': 'dart'});
+  final url = Uri.http(authority, unencodedPath, {'q': 'dart'});
   final Response response = await client.get(url).timeout(const Duration(seconds: 5));
   final statusCode = response.statusCode;
   print('Esse é o código de retorno: $statusCode');
@@ -47,4 +54,37 @@ Future<List<Transaction>> findAll() async {
   }
   debugPrint(transactions.toString());
   return transactions;
+}
+
+Future<Transaction?> save(Transaction transaction) async {
+  final Map<String, dynamic> transactionMap = {
+    "value": transaction.value,
+    "contact": {
+      "name": transaction.contact.name,
+      "accountNumber": transaction.contact.accountNumber,
+    }
+  };
+  final bodyToSend = jsonEncode({transactionMap});
+  final url = Uri.http(authority, unencodedPath, {'q': 'dart'});
+  final Response response = await client
+      .post(
+        url,
+        headers: headerAPI,
+        body: bodyToSend,
+      )
+      .timeout(const Duration(seconds: 5));
+
+  final statusCode = response.statusCode;
+  print('Esse é o código de retorno: $statusCode');
+  if (statusCode != 200) return null;
+  final Map<String, dynamic> decodedJson = jsonDecode(response.body);
+  final Map<String, dynamic> contactJson = decodedJson['contact'];
+  return Transaction(
+    decodedJson['value'],
+    Contact(
+      0,
+      contactJson['name'],
+      contactJson['accountNumber'],
+    ),
+  );
 }

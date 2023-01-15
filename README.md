@@ -14,7 +14,7 @@ Curso de Flutter da Alura.
 - [X] Convertendo JSON para objeto do Dart 
 - [X] Carregando a lista de transferências na tela 
 - [X] Lidando com problemas da comunicação externa 
-- [ ] Salvando transferências 
+- [X] Salvando transferências 
 - [ ] Integrando a inserção de transferências
 - [ ] Recapturando o código 
 - [ ] Serializando JSON no objeto
