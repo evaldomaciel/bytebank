@@ -27,7 +27,10 @@ class LoggingInterceptor implements InterceptorContract {
 Future<List<Transaction>> findAll() async {
   final Client client = InterceptedClient.build(interceptors: [LoggingInterceptor()]);
   final url = Uri.http('192.168.1.35:8080', '/transactions', {'q': 'dart'});
-  final Response response = await client.get(url);
+  final Response response = await client.get(url).timeout(const Duration(seconds: 5));
+  final statusCode = response.statusCode;
+  print('Esse é o código de retorno: $statusCode');
+  if (statusCode != 200) return [];
   final List<dynamic> decodedJson = jsonDecode(response.body);
   final List<Transaction> transactions = [];
   for (Map<String, dynamic> transactionJson in decodedJson) {

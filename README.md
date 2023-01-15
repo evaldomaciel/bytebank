@@ -13,7 +13,7 @@ Curso de Flutter da Alura.
 - [X] Utilizando o interceptador do HTTP 
 - [X] Convertendo JSON para objeto do Dart 
 - [X] Carregando a lista de transferências na tela 
-- [ ] Lidando com problemas da comunicação externa 
+- [X] Lidando com problemas da comunicação externa 
 - [ ] Salvando transferências 
 - [ ] Integrando a inserção de transferências
 - [ ] Recapturando o código 
