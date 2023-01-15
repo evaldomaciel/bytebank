@@ -1,12 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:bytebank/http/webClient.dart';
 import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(ByteBankApp());
-  findAll();
 }
 
 class ByteBankApp extends StatelessWidget {

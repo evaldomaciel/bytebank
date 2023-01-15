@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, unused_local_variable
 
-import 'package:bytebank/http/webClient.dart';
+import 'package:bytebank/http/webClients/transaction_webClient.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/models/transaction.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class TransactionForm extends StatefulWidget {
 
 class _TransactionFormState extends State<TransactionForm> {
   final TextEditingController _valueController = TextEditingController();
-
+  final TransactionWebClient webClient = TransactionWebClient();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +63,7 @@ class _TransactionFormState extends State<TransactionForm> {
                     onPressed: () {
                       final value = double.tryParse(_valueController.text);
                       final transactionCreated = Transaction(value!, widget.contact);
-                      save(transactionCreated).then((transactionReceive) {
+                      webClient.save(transactionCreated).then((transactionReceive) {
                         if(transactionReceive != null) {
                           Navigator.pop(context);
                         }

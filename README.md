@@ -16,7 +16,7 @@ Curso de Flutter da Alura.
 - [X] Lidando com problemas da comunicação externa 
 - [X] Salvando transferências 
 - [X] Integrando a inserção de transferências
-- [ ] Recapturando o código 
+- [X] Recapturando o código 
 - [ ] Serializando JSON no objeto
 - [ ] Simplificando o código de conversão 
 - [ ] Conclusão
