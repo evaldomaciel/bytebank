@@ -11,7 +11,7 @@ Curso de Flutter da Alura.
 - [X] Configurando o ambiente da web API
 - [X] Buscando transferências da web API
 - [X] Utilizando o interceptador do HTTP 
-- [ ] Convertendo JSON para objeto do Dart 
+- [X] Convertendo JSON para objeto do Dart 
 - [ ] Carregando a lista de transferências na tela 
 - [ ] Lidando com problemas da comunicação externa 
 - [ ] Salvando transferências 
