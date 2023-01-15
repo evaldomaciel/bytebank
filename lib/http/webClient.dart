@@ -1,8 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/models/transaction.dart';
-import 'package:bytebank/screens/transactions_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:http_interceptor/http_interceptor.dart';
@@ -29,7 +31,7 @@ const authority = '192.168.1.35:8080';
 const unencodedPath = '/transactions';
 const headerAPI = {
   'password': '1000',
-  'Content-type': 'application/josn',
+  'Content-Type': 'application/json',
 };
 
 Future<List<Transaction>> findAll() async {
@@ -64,7 +66,9 @@ Future<Transaction?> save(Transaction transaction) async {
       "accountNumber": transaction.contact.accountNumber,
     }
   };
-  final bodyToSend = jsonEncode({transactionMap});
+  print("Vamos transferir"); 
+  print(transactionMap);
+  final bodyToSend = jsonEncode(transactionMap);
   final url = Uri.http(authority, unencodedPath, {'q': 'dart'});
   final Response response = await client
       .post(
@@ -79,6 +83,7 @@ Future<Transaction?> save(Transaction transaction) async {
   if (statusCode != 200) return null;
   final Map<String, dynamic> decodedJson = jsonDecode(response.body);
   final Map<String, dynamic> contactJson = decodedJson['contact'];
+  print(response);
   return Transaction(
     decodedJson['value'],
     Contact(

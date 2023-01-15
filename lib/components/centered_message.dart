@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sort_child_properties_last, unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 
 class CenteredMessage extends StatelessWidget {

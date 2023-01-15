@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors,  prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, no_leading_underscores_for_local_identifiers, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors,  prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, no_leading_underscores_for_local_identifiers, use_key_in_widget_constructors, avoid_print
 
 import 'package:bytebank/components/progress.dart';
 import 'package:bytebank/database/app/dao/contact_doa.dart';
 import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/screens/contacts/form.dart';
+import 'package:bytebank/screens/transaction_form.dart';
 import 'package:flutter/material.dart';
 
 class ContactsList extends StatelessWidget {
@@ -31,7 +32,16 @@ class ContactsList extends StatelessWidget {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final Contact contact = contacts![index];
-                  return _ContactItem(contact);
+                  return _ContactItem(
+                    contact,
+                    onClick: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => TransactionForm(contact),
+                        ),
+                      );
+                    },
+                  );
                 },
                 itemCount: contacts?.length,
               );
@@ -51,11 +61,15 @@ class ContactsList extends StatelessWidget {
 
 class _ContactItem extends StatelessWidget {
   final Contact contact;
-  _ContactItem(this.contact);
+  final Function onClick;
+
+  _ContactItem(this.contact, {required this.onClick});
+
   @override
   Widget build(Object context) {
     return Card(
       child: ListTile(
+        onTap: () => onClick(),
         title: Text(
           contact.name,
           style: TextStyle(fontSize: 24.0),
@@ -64,5 +78,4 @@ class _ContactItem extends StatelessWidget {
       ),
     );
   }
-
 }

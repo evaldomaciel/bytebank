@@ -1,7 +1,8 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+
 import 'package:bytebank/components/centered_message.dart';
 import 'package:bytebank/components/progress.dart';
 import 'package:bytebank/http/webClient.dart';
-import 'package:bytebank/models/contact.dart';
 import 'package:bytebank/models/transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,7 @@ class TransactionsList extends StatelessWidget {
                 if (transactions!.isNotEmpty) {
                   return ListView.builder(
                     itemBuilder: (context, index) {
-                      final Transaction transaction = transactions![index];
+                      final Transaction transaction = transactions[index];
                       return Card(
                         child: ListTile(
                           leading: Icon(Icons.monetization_on),
