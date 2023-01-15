@@ -8,7 +8,7 @@ Curso de Flutter da Alura.
 - [X] Novas funcionalidades no dashboard
 - [X] Delegando eventos com callbacks
 - [X] Adicionando a lista de transferências
-- [ ] Configurando o ambiente da web API
+- [X] Configurando o ambiente da web API
 - [ ] Buscando transferências da web API
 - [ ] Utilizando o interceptador do HTTP 
 - [ ] Convertendo JSON para objeto do Dart 
