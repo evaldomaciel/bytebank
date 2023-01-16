@@ -17,9 +17,9 @@ Curso de Flutter da Alura.
 - [X] Salvando transferências 
 - [X] Integrando a inserção de transferências
 - [X] Recapturando o código 
-- [ ] Serializando JSON no objeto
-- [ ] Simplificando o código de conversão 
-- [ ] Conclusão
+- [X] Serializando JSON no objeto
+- [X] Simplificando o código de conversão 
+- [X] Conclusão
 
 
 ## Dependências instaladas
